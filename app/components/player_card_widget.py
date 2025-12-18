@@ -1,9 +1,9 @@
 import flet as ft
 
-def card_widget() -> ft.Container:
+def player_card_widget() -> ft.Container:
     return ft.Container(
-        width=64,
-        height=96,
+        width=89,
+        height=64,
         border_radius=ft.border_radius.all(8),
         border=ft.border.all(2, "#4B5563"),
         gradient=ft.LinearGradient(
@@ -13,9 +13,10 @@ def card_widget() -> ft.Container:
         ),
         alignment=ft.alignment.center,
         content=ft.Image(
-            src="assets/add_card.png",
-            width=24,
-            height=24,
-            fit=ft.ImageFit.CONTAIN,
+                src="assets/add_card.png",
+                width=24,
+                height=24,
+                fit=ft.ImageFit.CONTAIN,
         )
     )
+    

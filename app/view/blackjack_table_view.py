@@ -1,5 +1,6 @@
 import flet as ft
-from components.card_widget import card_widget
+from components.dealer_card_widget import card_dealer_widget
+from components.player_widget import player_widget
 
 def blackjack_table_view() -> ft.Container:
     table = ft.Container(
@@ -7,7 +8,6 @@ def blackjack_table_view() -> ft.Container:
         height=632,
         bgcolor="#15803D",
         border_radius=ft.border_radius.all(16),
-        padding=ft.padding.all(40),
         content=ft.Column([
             ft.Row([
                 ft.Container(
@@ -21,8 +21,8 @@ def blackjack_table_view() -> ft.Container:
                             ft.Text("CROUPIER", color="#FACC15", size=12)
                         ], alignment=ft.MainAxisAlignment.CENTER),
                         ft.Row([
-                            card_widget(),
-                            card_widget()
+                            card_dealer_widget(),
+                            card_dealer_widget()
                         ], alignment=ft.MainAxisAlignment.CENTER)
                     ], alignment=ft.MainAxisAlignment.CENTER)
                 )
@@ -52,8 +52,11 @@ def blackjack_table_view() -> ft.Container:
                         ], alignment=ft.MainAxisAlignment.CENTER)
                     ], alignment=ft.MainAxisAlignment.CENTER, spacing=0)
                 )
-            ], alignment=ft.MainAxisAlignment.CENTER)    
-        ], spacing=40)
+            ], alignment=ft.MainAxisAlignment.CENTER),
+            ft.Row([
+                player_widget(),
+            ], alignment=ft.MainAxisAlignment.CENTER),    
+        ], spacing=40, alignment=ft.MainAxisAlignment.CENTER)
     )
     return table
 
